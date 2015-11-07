@@ -27,9 +27,12 @@ response.json({message:"Hello World"})
 
 app.get("/jedi/:name" ,function(request,response){
 
-var name = request.param.name;
+var name = request.params.name;
+
+console.log(name);
 
 var isAJedi = jediLookup.isOk(name);
+
 if(isAJedi){
 	 console.log("This Person is a jedi");
 	 response.send("this route was hit");	
